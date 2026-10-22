@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#145ee8">
+<title>Walpper's SITE | Ideias que viram sites</title>
+<meta name="description" content="A Walpper's SITE cria sites modernos para negócios que querem crescer na internet.">
+
+<style>
+:root {
+  --blue: #1765e9;
+  --dark: #10284b;
+  --text: #263449;
+  --muted: #68768a;
+  --light: #f4f7fb;
+  --white: #fff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  line-height: 1.65;
+  background: var(--white);
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+.container { width: 90%; max-width: 1120px; margin: auto; }
+
+header {
+  background: rgba(255,255,255,.97);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid #e8edf5;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 78px;
+}
+.logo img { width: 175px; max-height: 65px; object-fit: contain; }
+nav { display: flex; gap: 22px; align-items: center; font-size: 14px; font-weight: 700; }
+nav a:hover { color: var(--blue); }
+
+.btn {
+  display: inline-block;
+  padding: 13px 21px;
+  border-radius: 9px;
+  font-weight: 700;
+  text-align: center;
+  transition: .2s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-blue { color: white; background: var(--blue); }
+.btn-white { color: var(--blue); background: white; }
+.btn-outline { border: 1px solid #d5deeb; background: white; }
+
+.hero {
+  padding: 85px 0;
+  background: linear-gradient(120deg, #edf4ff, #fff 70%);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 48px;
+}
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 30px;
+  color: #1552ad;
+  background: #dceaff;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+h1 {
+  font-size: clamp(36px, 5vw, 57px);
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+  margin-bottom: 22px;
+}
+h1 span { color: var(--blue); }
+.hero p { color: var(--muted); font-size: 17px; margin-bottom: 27px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-image {
+  height: 380px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 55px #153d741e;
+  background: #dce6f5;
+}
+.hero-image img { width: 100%; height: 100%; object-fit: cover; }
+
+section { padding: 76px 0; }
+.section-heading { text-align: center; margin-bottom: 38px; }
+.section-heading h2 { font-size: clamp(28px, 4vw, 38px); letter-spacing: -1px; }
+.section-heading p { color: var(--muted); margin-top: 8px; }
+
+.about { background: white; }
+.about-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: 45px;
+}
+.about-image {
+  height: 330px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--light);
+}
+.about-image img { width: 100%; height: 100%; object-fit: cover; }
+.about h2 { font-size: 34px; line-height: 1.2; margin-bottom: 17px; }
+.about p { color: var(--muted); margin-bottom: 14px; }
+
+.services { background: var(--light); }
+.service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.service {
+  background: white;
+  border: 1px solid #e5ebf3;
+  border-radius: 16px;
+  padding: 27px;
+}
+.service-icon {
+  width: 49px; height: 49px;
+  display: grid; place-items: center;
+  border-radius: 13px;
+  background: #e4eeff;
+  font-size: 24px;
+  margin-bottom: 17px;
+}
+.service h3 { margin-bottom: 8px; }
+.service p { color: var(--muted); font-size: 14px; }
+
+.portfolio { background: white; }
+.project-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+.project {
+  border: 1px solid #e4e9f1;
+  border-radius: 16px;
+  overflow: hidden;
+  background: white;
+  transition: .2s;
+}
+.project:hover { transform: translateY(-4px); box-shadow: 0 14px 35px #10284b12; }
+.project img { width: 100%; height: 220px; object-fit: cover; background: #edf1f7; }
+.project-info { padding: 21px; }
+.project-info small { color: var(--blue); font-weight: 800; text-transform: uppercase; letter-spacing: .5px; }
+.project-info h3 { margin: 6px 0; font-size: 20px; }
+.project-info p { color: var(--muted); font-size: 14px; }
+.project-note { text-align: center; color: var(--muted); font-size: 12px; margin-top: 22px; }
+
+.plan-section { background: var(--light); }
+.plan {
+  max-width: 480px;
+  margin: auto;
+  padding: 34px;
+  background: white;
+  border: 2px solid var(--blue);
+  border-radius: 20px;
+  box-shadow: 0 14px 40px #145ee814;
+}
+.plan-label {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #e3edff;
+  color: var(--blue);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 800;
+}
+.plan h3 { font-size: 25px; margin-top: 12px; }
+.price { color: var(--blue); font-size: 44px; font-weight: 900; margin: 8px 0; }
+.price small { font-size: 15px; color: var(--muted); font-weight: 400; }
+.plan-description { color: var(--muted); font-size: 14px; }
+.plan ul { list-style: none; margin: 23px 0; }
+.plan li { padding: 9px 0; border-bottom: 1px solid #edf0f5; font-size: 14px; }
+.plan li::before { content: "✓"; color: var(--blue); font-weight: 900; margin-right: 10px; }
+.plan .btn { display: block; }
+.fine-print { font-size: 12px; color: var(--muted); margin-top: 14px; }
+
+.contact {
+  background: linear-gradient(130deg, #103a7d, #145ee8);
+  color: white;
+  text-align: center;
+}
+.contact h2 { font-size: clamp(29px, 4vw, 40px); margin-bottom: 10px; }
+.contact p { color: #e0eaff; margin-bottom: 25px; }
+
+footer { padding: 27px 0; background: #0b1d37; color: #c9d5e8; text-align: center; font-size: 13px; }
+footer strong { color: white; }
+
+.whatsapp {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 30;
+  width: 55px;
+  height: 55px;
+  display: grid;
+  place-items: center;
+  background: #20c76a;
+  color: white;
+  font-size: 25px;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px #0003;
+}
+
+@media(max-width: 760px) {
+  .nav { flex-wrap: wrap; padding: 10px 0 14px; }
+  .logo img { width: 145px; }
+  nav { order: 3; width: 100%; justify-content: space-between; gap: 8px; font-size: 12px; }
+  .nav > .btn { font-size: 12px; padding: 10px 12px; }
+  .hero { padding: 52px 0; }
+  .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 28px; }
+  .hero-image { height: 270px; }
+  section { padding: 56px 0; }
+  .service-grid, .project-grid { grid-template-columns: 1fr; }
+  .project img { height: 235px; }
+  .about-image { height: 270px; }
+  .plan { padding: 25px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#inicio" aria-label="Walpper's SITE - início">
+      <img src="Logo Tecno Walpper’s Site.png" alt= logo>
+    </a>
+
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#portfolio">Projetos</a>
+      <a href="#planos">Planos</a>
+    </nav>
+
+    <a class="btn btn-blue" href="#contato">Vamos conversar</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <span class="tag">BEM-VINDO À WALPPER'S SITE</span>
+        <h1>Seu negócio merece ser visto na <span>internet.</span></h1>
+        <p>
+          Sabe aquela ideia de ter um site bonito para apresentar seu negócio?
+          A gente pode tirar isso do papel. Criamos páginas modernas,
+          fáceis de usar e pensadas para quem acessa pelo celular.
+        </p>
+        <div class="actions">
+          <a class="btn btn-blue" href="#contato">Bora tirar sua ideia do papel</a>
+          <a class="btn btn-outline" href="#portfolio">Conhecer os projetos</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="EMpresaCApa.png" alt=Imagem de apresentação da Walppers site >
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="sobre">
+    <div class="container about-grid">
+      <div class="about-image">
+        <img src="Logo Tecno Walpper’s Site.png" alt="Identidade visual da Walpper's SITE">
+      </div>
+
+      <div>
+        <span class="tag">QUEM SOMOS</span>
+        <h2>Por trás de cada site, existe um negócio com uma história.</h2>
+        <p>
+          A Walpper's SITE nasceu com uma ideia simples: ajudar negócios
+          a terem seu espaço na internet sem transformar tudo numa dor de cabeça.
+        </p>
+        <p>
+          Acreditamos que um bom site precisa ser bonito, fácil de navegar
+          e deixar claro o que a empresa faz. Sem complicação e sem enrolação.
+        </p>
+        <p>
+          Cada projeto começa com uma conversa para entender o que você precisa
+          e encontrar uma solução que faça sentido para seu negócio.
+        </p>
+        <a class="btn btn-blue" href="#contato">Fale com a gente</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Como podemos te ajudar?</h2>
+        <p>O essencial para apresentar seu negócio com mais profissionalismo.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service">
+          <div class="service-icon">🌐</div>
+          <h3>Criação de sites</h3>
+          <p>Uma página feita para mostrar seus serviços, informações e diferenciais.</p>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">📱</div>
+          <h3>Feito para celular</h3>
+          <p>Seus clientes podem navegar pelo site com conforto direto do telefone.</p>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">🛠️</div>
+          <h3>Manutenção</h3>
+          <p>Precisou atualizar uma informação? Nosso plano pode incluir pequenas alterações mensais.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Projetos e possibilidades</h2>
+        <p>Olha alguns exemplos de negócios que podem ganhar seu próprio site.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project">
+          <img src=Barbearia.jpeg alt="Imagem do projeto de barbearia" loading="lazy">
+          <div class="project-info">
+            <small>Beleza e estilo</small>
+            <h3>Site para barbearia</h3>
+            <p>Um lugar para apresentar cortes, serviços, preços e facilitar o contato com os clientes.</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <img src=MARENA_TBF2193.jpg alt="Imagem do projeto de restaurante" loading="lazy">
+          <div class="project-info">
+            <small>Gastronomia</small>
+            <h3>Site para restaurante</h3>
+            <p>Uma vitrine para mostrar o cardápio, divulgar o espaço e aproximar clientes.</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <img src=EMpresaCApa.png alt="Imagem de apresentação de empresa" loading="lazy">
+          <div class="project-info">
+            <small>Negócios</small>
+            <h3>Site institucional</h3>
+            <p>Apresente sua empresa, conte sua história e mostre aos clientes como entrar em contato.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="project-note">
+        As imagens ilustram exemplos de projetos. Os textos e serviços podem ser personalizados para cada cliente.
+      </p>
+    </div>
+  </section>
+
+  <section class="plan-section" id="planos">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Vamos começar sem complicação?</h2>
+        <p>Uma opção inicial para quem quer colocar o negócio na internet.</p>
+      </div>
+
+      <div class="plan">
+        <span class="plan-label">PLANO INICIAL</span>
+        <h3>Site Essencial</h3>
+        <div class="price">R$ 100<small>/mês</small></div>
+        <p class="plan-description">
+          Para pequenos negócios que precisam de uma presença digital simples e profissional.
+        </p>
+
+        <ul>
+          <li>Site adaptado para celular</li>
+          <li>Página com informações do negócio</li>
+          <li>Botão para contato pelo WhatsApp</li>
+          <li>Hospedagem incluída conforme as condições combinadas</li>
+          <li>Pequenas atualizações mensais</li>
+          <li>Suporte conforme o combinado</li>
+        </ul>
+
+        <a class="btn btn-blue" href="#contato">Tenho interesse nesse plano</a>
+
+        <p class="fine-print">
+          O valor e os detalhes finais são confirmados antes da contratação.
+          Domínio próprio, serviços pagos e alterações maiores podem ter custos adicionais.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <div class="container">
+      <h2>Tem uma ideia? Vamos conversar!</h2>
+      <p>
+        Conta pra gente o que você precisa. A gente conversa sobre sua ideia
+        e vê como transformar isso num site.
+      </p>
+      <a class="btn btn-white" id="whatsContato" href="#">Chamar no WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p><strong>Walpper's SITE</strong> — Ideias que ganham espaço na internet.</p>
+    <p>© <span id="ano"></span> Walpper's SITE. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<a class="whatsapp" id="whatsFixo" href="#" aria-label="Falar com a Walpper's SITE pelo WhatsApp">☏</a>
+
+<script>
+const SEU_WHATSAPP = "5584921518587";
+
+const mensagem = encodeURIComponent(
+  "Oi! Conheci a Walpper's SITE pelo site e queria conversar sobre a criação de um site para meu negócio."
+);
+
+const linkWhatsApp = "https://wa.me/" + SEU_WHATSAPP + "?text=" + mensagem;
+
+document.getElementById("whatsContato").href = linkWhatsApp;
+document.getElementById("whatsFixo").href = linkWhatsApp;
+document.getElementById("ano").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
